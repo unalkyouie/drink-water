@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "389455888255",
+    "firebase_url": "https://drink-water-d9a52-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "drink-water-d9a52",
+    "storage_bucket": "drink-water-d9a52.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:389455888255:android:c306676967bbbb3af4e44a",
+        "android_client_info": {
+          "package_name": "com.drinkwater"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "389455888255-qtffch3jvsbos2u0dqou9oanlpeth3io.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.drinkwater",
+            "certificate_hash": "94848a4c342c646ab9983d65cc7052f484e085a3"
+          }
+        },
+        {
+          "client_id": "389455888255-urukkis44jtgvjamnb0v2qvbtg6lq6vq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArCmNnBDGl7aaofQKqv068g-KtLAVVp5c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "389455888255-urukkis44jtgvjamnb0v2qvbtg6lq6vq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
