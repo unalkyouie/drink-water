@@ -10,18 +10,17 @@ PushNotification.configure({
   popInitialNotification: true,
   requestPermissions: true,
 });
-PushNotification.createChannel(
-  {
-    channelId: '3',
-    channelName: 'My channel',
-  },
-  () => {},
-);
 export const setNotification = () => {
+  PushNotification.createChannel(
+    {
+      channelId: '3',
+      channelName: 'My channel',
+    },
+    () => {},
+  );
   PushNotification.localNotificationSchedule({
     message: 'Drink some water :)',
-    date: new Date(Date.now() + 60 * 1000),
+    date: new Date(Date.now() + 2 * 360 * 1000),
     channelId: '3',
   });
 };
-PushNotification.deleteChannel('3');

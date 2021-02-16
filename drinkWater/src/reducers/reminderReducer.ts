@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export interface ReminderState {
-  timeSet: Date;
+  timeSet: number;
 }
 
 const initialState: ReminderState = {
-  timeSet: new Date(),
+  timeSet: 0,
 };
 
 const reminderSlice = createSlice({
@@ -13,7 +13,7 @@ const reminderSlice = createSlice({
   initialState,
   reducers: {
     setReminderTime: (state) => {
-      const timeSet = new Date(Date.now() + 60 * 1000);
+      const timeSet = new Date(Date.now() + 2 * 360 * 1000).getMilliseconds();
       state.timeSet = timeSet;
     },
   },

@@ -35,7 +35,6 @@ const store = configureStore({
 });
 
 export type AppDispatch = typeof store.dispatch;
-export type AppThunk = ThunkAction<void, AppState, unknown, Action>;
 const persistor = persistStore(store);
 
 export { store, persistor };
