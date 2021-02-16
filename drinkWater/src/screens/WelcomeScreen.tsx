@@ -1,19 +1,28 @@
+import auth from '@react-native-firebase/auth';
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ActivityIndicator, Dimensions, StyleSheet, Text } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { AppState } from '../reducers';
+import { isLoggedOut, logIn } from '../reducers/authReducer';
+import { AppDispatch } from '../store';
 
 const { height, width } = Dimensions.get('window');
 
 const WelcomeScreen = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch<AppDispatch>();
   const isLogged = useSelector<AppState, boolean>((state) => state.auth.isAuth);
   const isLoading = useSelector<AppState, boolean>(
     (state) => state.auth.isLoading,
   );
+  useEffect(() => {
+    auth().onAuthStateChanged((user) =>
+      user ? dispatch(logIn()) : dispatch(isLoggedOut()),
+    );
+  }, [dispatch]);
   return (
     <>
       {isLoading && (
