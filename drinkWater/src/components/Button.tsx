@@ -6,7 +6,7 @@ interface Props {
   onPress: () => void;
   title: string;
   type: 'default' | 'reminder';
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 const Button: React.FC<Props> = ({ onPress, title, type, disabled }) => {
@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     backgroundColor: '#63B0CD',
     justifyContent: 'center',
+    margin: 20,
     padding: 10,
     width: 200,
   },
