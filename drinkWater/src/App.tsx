@@ -9,7 +9,7 @@ import { persistor, store } from './store';
 const App = () => {
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      <PersistGate persistor={persistor}>
         <SafeAreaView style={{ flex: 1 }}>
           <AppContainer />
         </SafeAreaView>
