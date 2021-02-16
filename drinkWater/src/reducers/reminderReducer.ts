@@ -13,7 +13,7 @@ const reminderSlice = createSlice({
   initialState,
   reducers: {
     setReminderTime: (state) => {
-      const timeSet = new Date(Date.now() + 2 * 360 * 1000).getMilliseconds();
+      const timeSet = new Date(Date.now() + 2 * 3600 * 1000).getMilliseconds();
       state.timeSet = timeSet;
     },
   },
