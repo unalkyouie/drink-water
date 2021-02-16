@@ -20,7 +20,7 @@ export const setNotification = () => {
   );
   PushNotification.localNotificationSchedule({
     message: 'Drink some water :)',
-    date: new Date(Date.now() + 2 * 360 * 1000),
+    date: new Date(Date.now() + 2 * 3600 * 1000),
     channelId: '3',
   });
 };
