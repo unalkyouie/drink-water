@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, StyleSheet, TextInput } from 'react-native';
+import { View, StyleSheet, TextInput, Dimensions } from 'react-native';
 
 interface Props {
   onChangeText: (value: string) => void;
   onSubmitEditing: () => void;
   type: 'e-mail' | 'password';
 }
+const { width } = Dimensions.get('window');
 
 const Input: React.FC<Props> = ({ onChangeText, onSubmitEditing, type }) => {
   return (
@@ -19,7 +20,6 @@ const Input: React.FC<Props> = ({ onChangeText, onSubmitEditing, type }) => {
         keyboardType={type === 'e-mail' ? 'email-address' : 'default'}
         returnKeyType="next"
         onSubmitEditing={onSubmitEditing}
-        underlineColorAndroid="#f000"
         blurOnSubmit={false}
         secureTextEntry={type === 'password' ? true : false}
       />
@@ -30,18 +30,15 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     height: 40,
-    marginTop: 20,
-    marginLeft: 35,
-    marginRight: 35,
     margin: 10,
+    width: 0.8 * width,
   },
   input: {
-    color: 'black',
+    color: '#094D92',
     paddingLeft: 15,
     paddingRight: 15,
-    borderWidth: 1,
-    borderRadius: 30,
-    borderColor: 'black',
+    borderBottomWidth: 1,
+    borderColor: '#094D92',
   },
 });
 

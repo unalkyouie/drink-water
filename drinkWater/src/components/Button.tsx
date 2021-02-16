@@ -18,8 +18,9 @@ const Button: React.FC<Props> = ({ onPress, title, type, disabled }) => {
         style={[
           styles.container,
           type === 'reminder' && styles.waterContainer,
+          disabled && { backgroundColor: 'grey', borderColor: 'grey' },
         ]}>
-        <Text>{title}</Text>
+        <Text style={styles.text}>{title}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -27,12 +28,27 @@ const Button: React.FC<Props> = ({ onPress, title, type, disabled }) => {
 
 const styles = StyleSheet.create({
   container: {
+    alignItems: 'center',
+    alignSelf: 'center',
+    backgroundColor: '#63B0CD',
+    justifyContent: 'center',
+    padding: 10,
     width: 200,
-    height: 200,
-    backgroundColor: 'red',
   },
-  waterContainer: {},
-  text: {},
+  waterContainer: {
+    backgroundColor: '#D52941',
+    borderColor: '#990D35',
+    borderRadius: 100,
+    borderWidth: 20,
+    height: 200,
+    width: 200,
+  },
+  text: {
+    color: '#FCD581',
+    fontSize: 16,
+    textAlign: 'center',
+    padding: 10,
+  },
 });
 
 export default Button;

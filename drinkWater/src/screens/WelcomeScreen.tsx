@@ -1,10 +1,12 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { ActivityIndicator, StyleSheet } from 'react-native';
+import { ActivityIndicator, Dimensions, StyleSheet, Text } from 'react-native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
 import { useSelector } from 'react-redux';
 
 import { AppState } from '../reducers';
+
+const { height, width } = Dimensions.get('window');
 
 const WelcomeScreen = () => {
   const navigation = useNavigation();
@@ -14,13 +16,20 @@ const WelcomeScreen = () => {
   );
   return (
     <>
-      {isLoading && <ActivityIndicator style={styles.indictator} />}
+      {isLoading && (
+        <ActivityIndicator
+          style={styles.indictator}
+          size={'large'}
+          color={'#FCD581'}
+        />
+      )}
       <TouchableHighlight
-        style={{ backgroundColor: 'red', height: 200 }}
+        style={styles.container}
         onPress={() => {
           navigation.navigate(isLogged ? 'Home' : 'SignIn');
-        }}
-      />
+        }}>
+        <Text style={styles.text}>Tap to start</Text>
+      </TouchableHighlight>
     </>
   );
 };
@@ -34,6 +43,16 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: 0,
     top: 0,
+  },
+  container: {
+    backgroundColor: '#094D92',
+    height,
+    width,
+  },
+  text: {
+    color: '#FCD581',
+    fontSize: 40,
+    textAlign: 'center',
   },
 });
 export default WelcomeScreen;

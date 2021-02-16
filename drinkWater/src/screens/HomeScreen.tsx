@@ -29,7 +29,7 @@ const HomeScreen = () => {
     <View style={styles.container}>
       <Button
         onPress={setNewNotification}
-        title="Firebase Cloud Messaging"
+        title="Remind me to drink water"
         type="reminder"
         disabled={isDisabled}
       />
@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#307ecc',
   },
 });
